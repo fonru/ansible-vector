@@ -21,4 +21,4 @@ MIT
 Author Information
 ------------------
 
-Mikhail Fonaryov
+Mikhail Fonaryov 
