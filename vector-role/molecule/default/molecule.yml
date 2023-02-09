@@ -1,0 +1,38 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: ubuntu-20
+    hostname: ubuntu
+    image: mpaivabarbosa/molecule-systemd-ubuntu:20.04
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+    override_command: false
+
+#   # - name: Centos8
+#   #   image: centos:8
+#   #   pre_build_image: true
+  # - name: Ubuntu-latest
+  #   image: ubuntu:latest
+  #   #command: "/lib/systemd/systemd"
+  #   dockerfile: Dockerfile
+  #   #volumes:
+  #   #  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  #   privileged: true
+  #   pre_build_image: true
+# - name: ubuntu-latest
+#   hostname: ubuntu
+#   image: mpaivabarbosa/molecule-systemd-ubuntu:latest
+#   volumes:
+#     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+#   privileged: true
+#   pre_build_image: true
+#   override_command: false
+# provisioner:
+#   name: ansible
+# verifier:
+#   name: ansible
