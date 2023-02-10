@@ -6,10 +6,11 @@
   notify: Start Vector service
   when: ansible_facts['distribution'] == "Ubuntu"
 
-# - name: Download and install vector packages for Centos8
-#   become: true
-#   ansible.builtin.yum:
-#     name: https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.x86_64.rp
-#     state: present
-#   notify: Start Vector service
-#   when: ansible_facts['distribution'] == "CentOS"
+- name: Download and install vector packages for Centos8
+  become: true
+  ansible.builtin.yum:
+    name: https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.x86_64.rpm
+    state: present
+    disable_gpg_check: true
+  notify: Start Vector service
+  when: ansible_facts['distribution'] == "CentOS"
