@@ -11,7 +11,7 @@ platforms:
     privileged: true
     pre_build_image: false
 
-  - name: C8
-    image: quay.io/centos/centos:stream8
-    command: /sbin/init
-    privileged: True
+#   - name: C8
+#     image: quay.io/centos/centos:stream8
+#     command: /sbin/init
+#     privileged: True
